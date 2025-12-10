@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis | Anish Ketha</title>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;500;900&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --parasite-gold: #D4AF37;
+            --parasite-bg: #0a0a0a;
+            --snow-blue: #aed9e0;
+            --snow-red: #b22222;
+            --bg-dark: #000;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg-dark);
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* NAV */
+        .nav-overlay { position: fixed; top: 30px; right: 40px; z-index: 999; mix-blend-mode: difference; }
+        .nav-overlay a { color: white; text-decoration: none; margin-left: 30px; font-weight: 800; font-size: 0.8rem; letter-spacing: 2px; opacity: 0.7; transition: 0.3s; }
+        .nav-overlay a:hover, .nav-overlay a.active { opacity: 1; border-bottom: 1px solid #fff; }
+
+        .header {
+            min-height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
+            border-bottom: 1px solid #333; position: relative; padding: 0 5vw;
+        }
+        
+        h1 { font-family: 'Cormorant Garamond', serif; font-size: 6vw; line-height: 0.9; text-transform: uppercase; margin-bottom: 30px; color: #eee; }
+        .subtitle { font-family: 'Montserrat'; font-weight: 400; font-size: 1.2rem; color: #888; letter-spacing: 2px; text-transform: uppercase; }
+        
+        .header-bg {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(90deg, rgba(212,175,55,0.05) 0%, rgba(0,0,0,0) 50%, rgba(174,217,224,0.05) 100%);
+            z-index: -1;
+        }
+
+        .comparison-row {
+            display: flex; min-height: 70vh; border-bottom: 1px solid #333; position: relative;
+            will-change: opacity transform;
+        }
+
+        .side {
+            flex: 1; padding: 80px 50px; display: flex; flex-direction: column; justify-content: center;
+            transition: 0.5s ease; position: relative;
+        }
+
+        .side:hover { flex: 1.1; background: rgba(255,255,255,0.02); }
+        .side.parasite { border-right: 1px solid #333; }
+
+        .theme-header {
+            position: absolute; top: 40px; left: 50%; transform: translateX(-50%);
+            background: #000; padding: 10px 30px; border: 1px solid #333;
+            font-family: 'Montserrat'; font-weight: 900; letter-spacing: 3px; text-transform: uppercase; z-index: 10;
+            color: #fff; white-space: nowrap;
+        }
+
+        h2 { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; margin-bottom: 20px; line-height: 1; }
+        p { font-size: 1.1rem; line-height: 1.6; color: #ccc; max-width: 550px; }
+
+        .parasite h2 { color: var(--parasite-gold); }
+        .snow h2 { color: var(--snow-blue); }
+
+        .context-sec { padding: 100px 5vw; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; background: #050505; }
+        .context-text h3 { font-family: 'Cormorant Garamond'; font-size: 2.5rem; color: #fff; margin-bottom: 20px; }
+        .context-text p { color: #888; font-size: 1rem; line-height: 1.8; margin-bottom: 20px; }
+
+    </style>
+</head>
+<body>
+
+    <div class="nav-overlay">
+        <a href="index.html">PARASITE</a>
+        <a href="snowpiercer.html">SNOWPIERCER</a>
+        <a href="context.html" class="active">ANALYSIS</a>
+    </div>
+
+    <section class="header">
+        <div class="header-bg"></div>
+        <div class="subtitle">Bong Joon Ho</div>
+        <h1>Comparative Analysis of<br><span style="color:var(--parasite-gold)">Parasite</span> and <span style="color:var(--snow-blue)">Snowpiercer</span></h1>
+        <p style="max-width: 600px; opacity: 0.7;">
+            One is a sci-fi action movie, the other is a thriller about a family. 
+            But if you look closer, they are telling the exact same story about how impossible it is to move up in the world.
+        </p>
+    </section>
+
+    <div class="comparison-row">
+        <div class="theme-header">The Setting</div>
+        
+        <div class="side parasite">
+            <h2>Up and Down</h2>
+            <p>
+                Parasite uses height to show class difference. The Kim family lives below street level where they see feet and car lights passing by. The Park home sits high above the city with clean lines and natural light. Movement becomes a reminder of status because every climb feels like a temporary visit to a world that is not meant for them. The film turns ordinary spaces such as stairs and streets into a map of who belongs where.
+            </p>
+        </div>
+        
+        <div class="side snow">
+            <h2>Front to Back</h2>
+            <p>
+                Snowpiercer shows class through distance. The tail section is dark and cold and crowded while the front of the train feels open and controlled. The train itself feels like a whole society packed into one moving line. People move forward but the structure forces them to remain what the system expects them to be. Space and class are tied together just like in many of the films we watched where homes, cities, and borders carry social meaning.
+            </p>
+        </div>
+    </div>
+
+    <div class="comparison-row">
+        <div class="theme-header">The Plan</div>
+        
+        <div class="side parasite">
+            <h2>The Scam</h2>
+            <p>
+                The Kim family creates a plan that feels clever and careful but it depends on everything going exactly right. Once something shifts they lose control. The film suggests that planning inside a rigid class structure cannot guarantee change. We see how Korean cinema often looks at mobility within global systems and here that mobility feels imagined rather than real. The dream of moving up is strong but the conditions around them stay the same.
+            </p>
+        </div>
+        
+        <div class="side snow">
+            <h2>The Raid</h2>
+            <p>
+                Curtis pushes forward with a goal that seems heroic but eventually learns that the system is built to absorb revolt. Progress turns into another closed loop. Both films show how plans fall apart not because of poor choices but because the structure already decides where people end up. The idea of resistance becomes part of the system rather than a way out of it.
+            </p>
+        </div>
+    </div>
+
+     <div class="comparison-row">
+    <div class="theme-header">The Violence</div>
+    
+    <div class="side parasite">
+        <h2>The Birthday Party</h2>
+        <p>
+            In Parasite, the birthday party becomes the boiling point for everything the film has been building. The Kims try to rise into a higher world, the housekeeper and her husband are forced out of sight, and the Parks move through their lives without noticing the pressure beneath them. When these positions collide, the structure holding everyone in place breaks and the violence erupts. Yet nothing truly changes. The Park family replaces their staff, the Kims lose what little they had, and the father retreats into the basement once occupied by someone else. The son imagines buying the house one day, but the film shows how distant that hope is. After all the chaos, everyone returns to the place the class system has already set for them.
+        </p>
+    </div>
+    
+    <div class="side snow">
+        <h2>Along the Train</h2>
+        <p>
+            In Snowpiercer, the clashes are the result of years of pressure building at the back of the train. People there live with strict limits on food, movement, and opportunity, while the front enjoys stability. When they finally push forward, the violence is fierce but also expected within a system that keeps every group fixed in place. Even when the rebels reach the engine, they learn the revolt was anticipated and controlled. The system absorbs the disruption and continues on. As in Parasite, the outbreak of violence changes little. The train keeps its hierarchy, and the cycle begins again with new people taking the same positions as before.
+        </p>
+    </div>
+</div>
+
+
+    <section class="context-sec">
+        <div class="context-text">
+            <h3>Cultural Context and the Idea of Han</h3>
+            <p>
+                We talked about the Korean concept of <strong>Han (한)</strong> in class which is a deep emotion that blends grief, resentment, and frustration. Both films carry this feeling in quiet scenes where characters pause, listen, or simply sit with their situation. The characters are not only reacting to one bad event. They are carrying years of unfair treatment and limited choices and that weight shapes how they respond when things finally go wrong.
+            </p>
+        </div>
+        <div class="context-text">
+            <h3>Systems and Power</h3>
+            <p>
+                Bong Joon Ho often focuses on the power of structures rather than single villains. The rich do not need to act openly cruel in order for the poor to struggle. The system creates that distance on its own through money, space, and habit. This connects to ideas we discussed about how Korean cinema uses familiar places such as homes, trains, and city streets to show how power works in everyday life and how hard it is to step outside a role once it has been set.
+            </p>
+        </div>
+    </section>
+
+    <div style="height: 100px; display: flex; align-items: center; justify-content: center; background: #000; border-top: 1px solid #333;">
+        <span style="font-size: 0.7rem; letter-spacing: 2px; color: #555;"> KOR 330 Final Project</span>
+    </div>
+
+    <script>
+        window.onload = function() {
+            gsap.registerPlugin(ScrollTrigger);
+
+            gsap.utils.toArray('.comparison-row').forEach(row => {
+                gsap.from(row.querySelectorAll('.side'), {
+                    y: 50, opacity: 0, duration: 1, stagger: 0.2,
+                    scrollTrigger: { 
+                        trigger: row, 
+                        start: "top 75%",
+                        toggleActions: "play none none reverse"
+                    }
+                });
+            });
+
+            gsap.from(".context-text", {
+                y: 50, opacity: 0, duration: 1, stagger: 0.3,
+                scrollTrigger: { 
+                    trigger: ".context-sec", 
+                    start: "top 70%", 
+                    toggleActions: "play none none reverse"
+                }
+            });
+        };
+    </script>
+
+</body>
+</html>
